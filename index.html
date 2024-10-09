@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج التقييم السمعي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            direction: rtl;
+        }
+        h1, h2 {
+            color: #34495e;
+        }
+        .form-container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 120px;
+        }
+        button {
+            background-color: #2C3E50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #1a242f;
+        }
+        .form-section-title {
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>نموذج التقييم السمعي</h1>
+    
+    <form id="hearingForm">
+        <!-- معلومات المريض -->
+        <div class="section">
+            <h2 class="form-section-title">معلومات المريض</h2>
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="dob">تاريخ الميلاد:</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="age">العمر:</label>
+            <input type="number" id="age" name="age">
+
+            <label for="gender">الجنس:</label>
+            <select id="gender" name="gender">
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
+                <option value="other">آخر</option>
+            </select>
+
+            <label for="address">العنوان:</label>
+            <textarea id="address" name="address"></textarea>
+
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="date">تاريخ التقييم:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="audiologist">أخصائي السمع:</label>
+            <input type="text" id="audiologist" name="audiologist">
+        </div>
+
+        <!-- الشكوى الرئيسية -->
+        <div class="section">
+            <h2 class="form-section-title">الشكوى الرئيسية</h2>
+            <label for="chief_complaint">ما سبب حضورك لهذا التقييم السمعي اليوم؟</label>
+            <textarea id="chief_complaint" name="chief_complaint"></textarea>
+
+            <label for="hearing_issue_duration">منذ متى لاحظت مشكلة السمع؟</label>
+            <input type="text" id="hearing_issue_duration" name="hearing_issue_duration">
+
+            <label for="hearing_change">هل تغيرت المشكلة مع مرور الوقت؟</label>
+            <select id="hearing_change" name="hearing_change">
+                <option value="worse">ازدادت سوءًا</option>
+                <option value="better">تحسنت</option>
+                <option value="same">بقيت على حالها</option>
+            </select>
+        </div>
+
+        <!-- تاريخ السمع -->
+        <div class="section">
+            <h2 class="form-section-title">تاريخ السمع</h2>
+            <label for="hearing_loss">هل لديك فقدان في السمع؟</label>
+            <select id="hearing_loss" name="hearing_loss">
+                <option value="no">لا</option>
+                <option value="left">الأذن اليسرى</option>
+                <option value="right">الأذن اليمنى</option>
+                <option value="both">كلتا الأذنين</option>
+            </select>
+
+            <label for="hearing_difficulty">هل تواجه صعوبة في السمع في مواقف معينة؟ (اختر كل ما ينطبق)</label>
+            <select id="hearing_difficulty" name="hearing_difficulty" multiple>
+                <option value="quiet">في البيئات الهادئة</option>
+                <option value="noise">في البيئات الصاخبة</option>
+                <option value="group">في المحادثات الجماعية</option>
+                <option value="phone">عند التحدث عبر الهاتف</option>
+                <option value="tv">عند مشاهدة التلفاز</option>
+                <option value="music">عند الاستماع إلى الموسيقى</option>
+            </select>
+
+            <label for="hearing_muffled">هل تشعر أن الأصوات مكتومة أو مشوشة؟</label>
+            <select id="hearing_muffled" name="hearing_muffled">
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
+            </select>
+        </div>
+
+        <!-- طنين الأذن -->
+        <div class="section">
+            <h2 class="form-section-title">طنين الأذن</h2>
+            <label for="tinnitus">هل تعاني من طنين الأذن؟</label>
+            <select id="tinnitus" name="tinnitus">
+                <option value="no">لا</option>
+                <option value="left">الأذن اليسرى</option>
+                <option value="right">الأذن اليمنى</option>
+                <option value="both">كلتا الأذنين</option>
+            </select>
+
+            <label for="tinnitus_description">صف الصوت (رنين، طنين، هسهسة، هدير، إلخ.):</label>
+            <textarea id="tinnitus_description" name="tinnitus_description"></textarea>
+
+            <label for="tinnitus_duration">منذ متى تعاني من هذا الطنين؟</label>
+            <input type="text" id="tinnitus_duration" name="tinnitus_duration">
+
+            <label for="tinnitus_effect">هل يؤثر الطنين على نومك أو تركيزك أو حالتك النفسية؟</label>
+            <textarea id="tinnitus_effect" name="tinnitus_effect"></textarea>
+        </div>
+
+        <!-- آلام الأذن أو الانزعاج -->
+        <div class="section">
+            <h2 class="form-section-title">آلام الأذن أو الانزعاج</h2>
+            <label for="ear_pain">هل تعاني من آلام في الأذن؟</label>
+            <select id="ear_pain" name="ear_pain">
+                <option value="no">لا</option>
+                <option value="left">الأذن اليسرى</option>
+                <option value="right">الأذن اليمنى</option>
+                <option value="both">كلتا الأذنين</option>
+            </select>
+
+            <label for="pain_description">صف نوع الألم (حاد، باهت، نابض، إلخ.):</label>
+            <textarea id="pain_description" name="pain_description"></textarea>
+
+            <label for="ear_fullness">هل تشعر بأي ضغط أو امتلاء في أذنيك؟</label>
+            <select id="ear_fullness" name="ear_fullness">
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
+            </select>
+        </div>
+
+        <!-- الدوار أو مشاكل التوازن -->
+        <div class="section">
+            <h2 class="form-section-title">الدوار أو مشاكل التوازن</h2>
+            <label for="dizziness">هل تعاني من الدوار أو الدوخة؟</label>
+            <select id="dizziness" name="dizziness">
+                <option value="no">لا</option>
+                <option value="yes">نعم</option>
+            </select>
+
+            <label for="dizziness_description">صف نوع الدوار (دوران، خفة في الرأس، فقدان التوازن):</label>
+            <textarea id="dizziness_description" name="dizziness_description"></textarea>
+
+            <label for="dizziness_duration">كم من الوقت يستمر الدوار في كل مرة؟</label>
+            <input type="text" id="dizziness_duration" name="dizziness_duration">
+
+            <label for="dizziness_frequency">ما هي تكرارية الدوار؟</label>
+            <input type="text" id="dizziness_frequency" name="dizziness_frequency">
+        </div>
+
+             <!-- التاريخ الطبي -->
+        <div class="section">
+            <h2 class="form-section-title">التاريخ الطبي</h2>
+            <label for="ear_infections">هل <label for="ear_infections">
+هل سبق أن عانيت من التهابات في الأذن؟</label>
+            <select id="ear_infections" name="ear_infections">
+                <option value="no">لا</option>
+                <option value="left">الأذن اليسرى</option>
+                <option value="right">الأذن اليمنى</option>
+                <option value="both">كلتا الأذنين</option>
+            </select>
+
+            <label for="ear_infections_what">إذا كانت الإجابة نعم، ما نوع الالتهاب وعدد مرات حدوثه؟</label>
+            <textarea id="ear_infections_what" name="ear_infections_what"></textarea>
+
+<label for="surgeries">هل خضعت لأي عمليات جراحية في الأذن أو الرأس؟</label>
+            <textarea id="surgeries" name="surgeries"></textarea>
+
+            <label
+ for="family_history">هل هناك تاريخ عائلي لفقدان السمع؟</label>
+            <select id="family_history" name="family_history">
+                <option value="no">لا</option>
+                <option value="yes">نعم</option>
+            </select>
+
+            <label for="family_history_who">إذا كانت الإجابة نعم، من من أفراد العائلة؟</label>
+            <textarea id="family_history_who" name="family_history_who"></textarea>
+
+            <label for="medical_conditions">هل تعاني من أي من الحالات الطبية التالية؟ (اختر كل ما ينطبق)</label>
+            <select id="medical_conditions" name="medical_conditions" multiple>
+                <option value="diabetes">السكري</option>
+                <option value="hypertension">ارتفاع ضغط الدم</option>
+                <option value="cardiovascular_disease">أمراض القلب</option>
+                <option value="kidney_disease">أمراض الكلى</option>
+                <option value="autoimmune_disorders">اضطرابات المناعة الذاتية</option>
+                <option value="head_trauma">إصابات الرأس</option>
+                <option value="neurological_disorders">اضطرابات عصبية</option>
+            </select>
+
+            <label for="medications">هل تتناول أي أدوية حاليًا؟ (يرجى ذكر الأدوية)</label>
+            <textarea id="medications" name="medications"></textarea>
+        </div>
+
+        <!-- تاريخ استخدام السماعات -->
+        <div class="section">
+            <h2 class="form-section-title">تاريخ استخدام السماعات</h2>
+            <label for="hearing_aid">هل سبق لك استخدام السماعات الطبية؟</label>
+            <select id="hearing_aid" name="hearing_aid">
+                <option value="no">لا</option>
+                <option value="yes">نعم</option>
+            </select>
+
+            <label for="hearing_aid_type">إذا كانت الإجابة نعم، ما نوعها؟ (داخل الأذن، خلف الأذن، إلخ.)</label>
+            <input type="text" id="hearing_aid_type" name="hearing_aid_type">
+
+            <label for="hearing_aid_duration">كم من الوقت استخدمت السماعات؟</label>
+            <input type="text" id="hearing_aid_duration" name="hearing_aid_duration">
+
+            <label for="hearing_aid_effectiveness">هل كانت فعالة في تحسين سمعك؟</label>
+            <select id="hearing_aid_effectiveness" name="hearing_aid_effectiveness">
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
+            </select>
+        </div>
+
+        <!-- التأثير الاجتماعي وأسلوب الحياة -->
+        <div class="section">
+            <h2 class="form-section-title">التأثير الاجتماعي وأسلوب الحياة</h2>
+            <label for="impact">كيف يؤثر ضعف السمع على حياتك اليومية؟ (مثل التفاعلات الاجتماعية، العمل، العلاقات)</label>
+            <textarea id="impact" name="impact"></textarea>
+
+            <label for="hearing_situations">في أي من هذه المواقف تواجه أكبر صعوبة في السمع؟ (اختر كل ما ينطبق)</label>
+            <select id="hearing_situations" name="hearing_situations" multiple>
+                <option value="quiet">البيئات الهادئة</option>
+                <option value="noisy">البيئات الصاخبة</option>
+                <option value="conversations">المحادثات مع عدة أشخاص</option>
+                <option value="meetings">الاجتماعات أو العروض التقديمية</option>
+                <option value="restaurants">في المطاعم أو التجمعات الاجتماعية</option>
+            </select>
+        </div>
+
+        <!-- الفحوصات السمعية الموضوعية -->
+        <div class="section">
+            <h2 class="form-section-title">الفحوصات السمعية الموضوعية</h2>
+            <label for="pure_tone">نتائج فحص سمع النغمة النقية:</label>
+            <textarea id="pure_tone" name="pure_tone"></textarea>
+
+            <label for="speech_audiometry">نتائج قياس السمع الكلامي:</label>
+            <textarea id="speech_audiometry" name="speech_audiometry"></textarea>
+
+            <label for="tympanometry">نتائج اختبار الطبلة:</label>
+            <textarea id="tympanometry" name="tympanometry"></textarea>
+
+            <label for="reflexes">نتائج اختبار ردود الفعل السمعية:</label>
+            <textarea id="reflexes" name="reflexes"></textarea>
+
+            <label for="other_tests">أي فحوصات أخرى تم إجراؤها:</label>
+            <textarea id="other_tests" name="other_tests"></textarea>
+        </div>
+
+        <!-- زر الإرسال -->
+        <button type="submit">إرسال التقييم</button>
+    </form>
+</div>
+
+        <!-- الزر لتحميل الملف النصي -->
+        <button type="button" onclick="downloadFile()">تحميل التقييم كملف نصي</button>
+    </form>
+</div>
+
+<!-- إضافة زر إرسال إلى واتساب -->
+<button type="button" onclick="sendToWhatsApp()">إرسال إلى واتساب</button>
+    </form>
+</div>
+
+<script>
+function downloadFile() {
+    const name = document.getElementById("name").value;
+    const dob = document.getElementById("dob").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
+    const date = document.getElementById("date").value;
+    const audiologist = document.getElementById("audiologist").value;
+
+    const chief_complaint = document.getElementById("chief_complaint").value;
+    const hearing_issue_duration = document.getElementById("hearing_issue_duration").value;
+    const hearing_change = document.getElementById("hearing_change").value;
+
+    const hearing_loss = document.getElementById("hearing_loss").value;
+    const hearing_difficulty = Array.from(document.getElementById("hearing_difficulty").selectedOptions).map(option => option.text).join(", ");
+    const hearing_muffled = document.getElementById("hearing_muffled").value;
+
+    const tinnitus = document.getElementById("tinnitus").value;
+    const tinnitus_description = document.getElementById("tinnitus_description").value;
+    const tinnitus_duration = document.getElementById("tinnitus_duration").value;
+    const tinnitus_effect = document.getElementById("tinnitus_effect").value;
+
+    const ear_pain = document.getElementById("ear_pain").value;
+    const pain_description = document.getElementById("pain_description").value;
+    const ear_fullness = document.getElementById("ear_fullness").value;
+
+    const dizziness = document.getElementById("dizziness").value;
+    const dizziness_description = document.getElementById("dizziness_description").value;
+    const dizziness_duration = document.getElementById("dizziness_duration").value;
+    const dizziness_frequency = document.getElementById("dizziness_frequency").value;
+
+    const ear_infections = document.getElementById("ear_infections").value;
+    const ear_infections_what = document.getElementById("ear_infections_what").value;
+    const surgeries = document.getElementById("surgeries").value;
+    const family_history = document.getElementById("family_history").value;
+    const family_history_who = document.getElementById("family_history_who").value;
+
+    const medical_conditions = Array.from(document.getElementById("medical_conditions").selectedOptions).map(option => option.text).join(", ");
+    const medications = document.getElementById("medications").value;
+
+    const hearing_aid = document.getElementById("hearing_aid").value;
+    const hearing_aid_type = document.getElementById("hearing_aid_type").value;
+    const hearing_aid_duration = document.getElementById("hearing_aid_duration").value;
+    const hearing_aid_effectiveness = document.getElementById("hearing_aid_effectiveness").value;
+
+    const impact = document.getElementById("impact").value;
+    const hearing_situations = Array.from(document.getElementById("hearing_situations").selectedOptions).map(option => option.text).join(", ");
+
+    const pure_tone = document.getElementById("pure_tone").value;
+    const speech_audiometry = document.getElementById("speech_audiometry").value;
+    const tympanometry = document.getElementById("tympanometry").value;
+    const reflexes = document.getElementById("reflexes").value;
+    const other_tests = document.getElementById("other_tests").value;
+
+    const fileContent = `
+    معلومات المريض:
+    الاسم: ${name}
+    تاريخ الميلاد: ${dob}
+    العمر: ${age}
+    الجنس: ${gender}
+    العنوان: ${address}
+    رقم الهاتف: ${phone}
+    تاريخ التقييم: ${date}
+    أخصائي السمع: ${audiologist}
+
+    الشكوى الرئيسية:
+    ما سبب حضورك لهذا التقييم السمعي اليوم؟ ${chief_complaint}
+    منذ متى لاحظت مشكلة السمع؟ ${hearing_issue_duration}
+    هل تغيرت المشكلة مع مرور الوقت؟ ${hearing_change}
+
+    تاريخ السمع:
+    هل لديك فقدان في السمع؟ ${hearing_loss}
+    هل تواجه صعوبة في السمع في مواقف معينة؟ ${hearing_difficulty}
+    هل تشعر أن الأصوات مكتومة أو مشوشة؟ ${hearing_muffled}
+
+    طنين الأذن:
+    هل تعاني من طنين الأذن؟ ${tinnitus}
+    وصف الصوت: ${tinnitus_description}
+    منذ متى تعاني من هذا الطنين؟ ${tinnitus_duration}
+    هل يؤثر الطنين على نومك أو تركيزك أو حالتك النفسية؟ ${tinnitus_effect}
+
+    آلام الأذن أو الانزعاج:
+    هل تعاني من آلام في الأذن؟ ${ear_pain}
+    وصف نوع الألم: ${pain_description}
+    هل تشعر بأي ضغط أو امتلاء في أذنيك؟ ${ear_fullness}
+
+    الدوار أو مشاكل التوازن:
+    هل تعاني من الدوار أو الدوخة؟ ${dizziness}
+    وصف نوع الدوار: ${dizziness_description}
+    كم من الوقت يستمر الدوار في كل مرة؟ ${dizziness_duration}
+    ما هي تكرارية الدوار؟ ${dizziness_frequency}
+
+    التاريخ الطبي:
+    هل سبق أن عانيت من التهابات في الأذن؟ ${ear_infections}
+    نوع الالتهاب وعدد مرات حدوثه: ${ear_infections_what}
+    هل خضعت لأي عمليات جراحية؟ ${surgeries}
+    هل هناك تاريخ عائلي لفقدان السمع؟ ${family_history}
+    من من أفراد العائلة؟ ${family_history_who}
+    الحالات الطبية: ${medical_conditions}
+    الأدوية الحالية: ${medications}
+
+    تاريخ استخدام السماعات:
+    هل سبق لك استخدام السماعات الطبية؟ ${hearing_aid}
+    نوع السماعات: ${hearing_aid_type}
+    مدة الاستخدام: ${hearing_aid_duration}
+    فعالية السماعات: ${hearing_aid_effectiveness}
+
+    التأثير الاجتماعي وأسلوب الحياة:
+    كيف يؤثر ضعف السمع على حياتك؟ ${impact}
+    الصعوبات في مواقف معينة: ${hearing_situations}
+
+    الفحوصات السمعية:
+    نتائج فحص سمع النغمة النقية: ${pure_tone}
+    نتائج قياس السمع الكلامي: ${speech_audiometry}
+    نتائج اختبار الطبلة: ${tympanometry}
+    نتائج اختبار ردود الفعل السمعية: ${reflexes}
+    فحوصات أخرى: ${other_tests}
+    `;
+
+    const blob = new Blob([fileContent], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `${name}_التقييم_السمعي.txt`;
+    link.click();
+}
+
+function sendToWhatsApp() {
+    const name = document.getElementById("name").value;
+    const dob = document.getElementById("dob").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
+    const date = document.getElementById("date").value;
+    const audiologist = document.getElementById("audiologist").value;
+
+    const chief_complaint = document.getElementById("chief_complaint").value;
+    const hearing_issue_duration = document.getElementById("hearing_issue_duration").value;
+    const hearing_change = document.getElementById("hearing_change").value;
+
+    const hearing_loss = document.getElementById("hearing_loss").value;
+    const hearing_difficulty = Array.from(document.getElementById("hearing_difficulty").selectedOptions).map(option => option.text).join(", ");
+    const hearing_muffled = document.getElementById("hearing_muffled").value;
+
+    const tinnitus = document.getElementById("tinnitus").value;
+    const tinnitus_description = document.getElementById("tinnitus_description").value;
+    const tinnitus_duration = document.getElementById("tinnitus_duration").value;
+    const tinnitus_effect = document.getElementById("tinnitus_effect").value;
+
+    const ear_pain = document.getElementById("ear_pain").value;
+    const pain_description = document.getElementById("pain_description").value;
+    const ear_fullness = document.getElementById("ear_fullness").value;
+
+    const dizziness = document.getElementById("dizziness").value;
+    const dizziness_description = document.getElementById("dizziness_description").value;
+    const dizziness_duration = document.getElementById("dizziness_duration").value;
+    const dizziness_frequency = document.getElementById("dizziness_frequency").value;
+
+    const ear_infections = document.getElementById("ear_infections").value;
+    const ear_infections_what = document.getElementById("ear_infections_what").value;
+    const surgeries = document.getElementById("surgeries").value;
+    const family_history = document.getElementById("family_history").value;
+    const family_history_who = document.getElementById("family_history_who").value;
+
+    const medical_conditions = Array.from(document.getElementById("medical_conditions").selectedOptions).map(option => option.text).join(", ");
+    const medications = document.getElementById("medications").value;
+
+    const hearing_aid = document.getElementById("hearing_aid").value;
+    const hearing_aid_type = document.getElementById("hearing_aid_type").value;
+    const hearing_aid_duration = document.getElementById("hearing_aid_duration").value;
+    const hearing_aid_effectiveness = document.getElementById("hearing_aid_effectiveness").value;
+
+    const impact = document.getElementById("impact").value;
+    const hearing_situations = Array.from(document.getElementById("hearing_situations").selectedOptions).map(option => option.text).join(", ");
+
+    const pure_tone = document.getElementById("pure_tone").value;
+    const speech_audiometry = document.getElementById("speech_audiometry").value;
+    const tympanometry = document.getElementById("tympanometry").value;
+    const reflexes = document.getElementById("reflexes").value;
+    const other_tests = document.getElementById("other_tests").value;
+
+    const message = `
+    *معلومات المريض:*
+    الاسم: ${name}
+    تاريخ الميلاد: ${dob}
+    العمر: ${age}
+    الجنس: ${gender}
+    العنوان: ${address}
+    رقم الهاتف: ${phone}
+    تاريخ التقييم: ${date}
+    أخصائي السمع: ${audiologist}
+
+    *الشكوى الرئيسية:*
+    سبب الحضور: ${chief_complaint}
+    مدة مشكلة السمع: ${hearing_issue_duration}
+    التغير في المشكلة: ${hearing_change}
+
+    *تاريخ السمع:*
+    فقدان السمع: ${hearing_loss}
+    صعوبة السمع في المواقف: ${hearing_difficulty}
+    هل الأصوات مكتومة: ${hearing_muffled}
+
+    *طنين الأذن:*
+    الطنين: ${tinnitus}
+    وصف الطنين: ${tinnitus_description}
+    مدة الطنين: ${tinnitus_duration}
+    تأثير الطنين: ${tinnitus_effect}
+
+    *آلام الأذن أو الانزعاج:*
+    ألم الأذن: ${ear_pain}
+    وصف الألم: ${pain_description}
+    ضغط الأذن: ${ear_fullness}
+
+    *الدوار:*
+    الدوار: ${dizziness}
+    وصف الدوار: ${dizziness_description}
+    مدة الدوار: ${dizziness_duration}
+    تكرار الدوار: ${dizziness_frequency}
+
+    *التاريخ الطبي:*
+    التهابات الأذن: ${ear_infections}
+    وصف الالتهاب: ${ear_infections_what}
+    العمليات الجراحية: ${surgeries}
+    تاريخ العائلة لفقدان السمع: ${family_history}
+    أفراد العائلة المصابين: ${family_history_who}
+    الحالات الطبية: ${medical_conditions}
+    الأدوية الحالية: ${medications}
+
+    *استخدام السماعات:*
+    هل تم استخدام السماعات الطبية: ${hearing_aid}
+    نوع السماعات: ${hearing_aid_type}
+    مدة استخدام السماعات: ${hearing_aid_duration}
+    فعالية السماعات: ${hearing_aid_effectiveness}
+
+    *التأثير الاجتماعي وأسلوب الحياة:*
+    تأثير ضعف السمع: ${impact}
+    المواقف التي تواجه فيها صعوبة في السمع: ${hearing_situations}
+
+    *الفحوصات:*
+    فحص النغمة النقية: ${pure_tone}
+    قياس السمع الكلامي: ${speech_audiometry}
+    فحص الطبلة: ${tympanometry}
+    ردود الفعل السمعية: ${reflexes}
+    فحوصات أخرى: ${other_tests}
+    `;
+
+    const encodedMessage = encodeURIComponent(message.trim());
+    const phoneNumber = "201116644752"; // استبدل هذا بالرقم الذي تود إرسال الرسالة إليه
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+}
+</script>
+
+</body>
+</html>
